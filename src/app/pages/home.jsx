@@ -5,26 +5,25 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// MainTitle component
 const MainTitle = memo(() => (
-  <div className="space-y-4 sm:space-y-2" data-aos="fade-up" data-aos-delay="600">
-    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-      <div className="relative inline-block mb-2 sm:mb-0">
-        <span className="absolute -inset-2 bg-gradient-to-r from-primary to-primary/50 blur-2xl opacity-20"></span>
-        <span className="relative text-primary">
-          Social
+    <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
+      <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+        <span className="relative inline-block">
+          <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
+          <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+            Social
+          </span>
         </span>
-      </div>
-      <div className="relative inline-block mt-4 sm:mt-2">
-        <span className="absolute -inset-2 bg-gradient-to-r from-primary to-primary/50 blur-2xl opacity-20"></span>
-        <span className="relative text-primary block sm:inline-block">
-          Worker
+        <br />
+        <span className="relative inline-block mt-2">
+          <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
+          <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+            Worker
+          </span>
         </span>
-      </div>
-    </h1>
-  </div>
-));
-
+      </h1>
+    </div>
+  ));
 const TechStack = memo(({ tech }) => (
   <div className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-accent/5 backdrop-blur-sm border border-border text-xs sm:text-sm text-muted-foreground hover:bg-accent/10 transition-colors">
     {tech}
@@ -49,16 +48,16 @@ const CTAButton = memo(({ href, text, icon: Icon }) => (
 ));
 
 const SocialLink = memo(({ icon: Icon, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    <button className="group relative p-2 sm:p-3">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/50 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-      <div className="relative rounded-xl bg-background/50 backdrop-blur-xl p-1.5 sm:p-2 flex items-center justify-center border border-border group-hover:border-primary/20 transition-all duration-300">
-        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-      </div>
-    </button>
-  </a>
-));
-
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <button className="group relative p-3">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+        <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
+          <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+        </div>
+      </button>
+    </a>
+  ));
+  
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
