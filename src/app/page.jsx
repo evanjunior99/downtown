@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import WelcomeScreen from './pages/welcomeScreen';
 import Home from './pages/home';
 import Navbar from './components/navbar/page';
-
+import AboutPage from './components/about/page'
 import Contact from './pages/contact';
+import { ThemeProvider } from './components/themeProvider';
 
 const App = () => {
   const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
@@ -20,17 +21,20 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      {showWelcomeScreen ? (
-        <WelcomeScreen />
-      ) : (
-        <>
-          <Navbar />
-          <Home />
-          <Contact />
-        </>
-      )}
-    </>
+    <ThemeProvider> {/* Wrapping the entire app with ThemeProvider */}
+      <>
+        {showWelcomeScreen ? (
+          <WelcomeScreen />
+        ) : (
+          <>
+            <Navbar />
+            <Home />
+            <AboutPage />
+            <Contact/>
+          </>
+        )}
+      </>
+    </ThemeProvider>
   );
 };
 
