@@ -16,7 +16,7 @@ const socialLinks = [
     displayName: "Let's Connect",
     subText: "on LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/MatiusWilliams/",
+    url: "https://www.linkedin.com/in/matias-williams-157a24339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true
@@ -26,7 +26,7 @@ const socialLinks = [
     displayName: "Instagram",
     subText: "@Matius Williams",
     icon: Instagram,
-    url: "https://www.instagram.com/MatiusWilliams",
+    url: " https://www.instagram.com/60.751283?igsh=YzljYTk1ODg3Zg==/",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]"
   },

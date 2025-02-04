@@ -52,12 +52,14 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
-          <img
+          <Image
             src="/matias.jpg"
             alt="Profile"
-            style={{ width: "600px", height: "500px" }}
-            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+            width={600}
+            height={500}
             loading="lazy"
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+            
           />
 
           {/* Advanced hover effects - desktop only */}
@@ -240,7 +242,7 @@ const AboutPage = () => {
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/drive/folders/17iAvCN7ufHVm_mZSlfj5ZFN3Lohb-hXj?usp=drive_link" className="w-full lg:w-auto">
+              <a href="https://drive.google.com/drive/folders/17iAvCN7ufHVm_mZSlfj5ZFN3Lohb-hXj" className="w-full lg:w-auto">
                 <button 
                   data-aos="fade-up"
                   data-aos-duration="800"
