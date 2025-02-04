@@ -6,11 +6,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const MainTitle = memo(() => (
-    <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
+    <div className="space-y-2 p-7" data-aos="fade-up" data-aos-delay="600">
       <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
         <span className="relative inline-block">
           <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
-          <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+          <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
             Social
           </span>
         </span>
@@ -140,7 +140,7 @@ const Home = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed font-light mx-auto lg:mx-0"
+                <p className="text-sm sm:text-base text-white md:text-lg text-muted-foreground max-w-xl leading-relaxed font-light mx-auto lg:mx-0"
                   data-aos="fade-up"
                   data-aos-delay="1000">
                   Creating innovative, functional, and user-friendly applications for digital solutions.
@@ -172,7 +172,7 @@ const Home = () => {
                 }`}>
                   <div className="w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
                     <img
-                      src="/evan.jpg"
+                      src="/mg3.jpg"
                       alt="Profile"
                       className={`object-cover object-center transition-all duration-500 ${
                         isHovering ? "scale-110" : "scale-100"

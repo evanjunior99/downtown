@@ -4,8 +4,11 @@ import {
   Github,
   Instagram,
   Youtube,
+  Facebook,
   ExternalLink
 } from "lucide-react";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+
 
 const socialLinks = [
   {
@@ -28,22 +31,22 @@ const socialLinks = [
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]"
   },
   {
-    name: "YouTube",
-    displayName: "Youtube",
-    subText: "@eki zulfar",
-    icon: Youtube,
-    url: "https://www.youtube.com/@eki_zulfar",
-    color: "#FF0000",
-    gradient: "from-[#FF0000] to-[#CC0000]"
+    name: "Facebook",
+    displayName: "Facebook",
+    subText: "@Matius Williams",
+    icon: FaFacebook, // ✅ Corrected from Youtube
+    url: "https://web.facebook.com/people/Matius-Williams/pfbid029K1hUWBGT9nCXvQeXWb1NtdUsoa9Unpnf9myyBhtYUtCZqcmoSabFVgwDBoQiXUol/#",
+    color: "#1877F2",
+    gradient: "from-[#1877F2] to-[#166FE5]",
   },
   {
-    name: "GitHub",
-    displayName: "Github",
-    subText: "@EkiZR",
-    icon: Github,
-    url: "https://github.com/EkiZR",
-    color: "#ffffff",
-    gradient: "from-[#333] to-[#24292e]"
+    name: "WhatsApp",
+    displayName: "WhatsApp",
+    subText: "@matius",
+    icon: FaWhatsapp, // ✅ Corrected naming
+    url: "https://wa.me/+265885783996", // Replace with actual WhatsApp link
+    color: "#25D366",
+    gradient: "from-[#25D366] to-[#128C7E]",
   },
  
 ];
