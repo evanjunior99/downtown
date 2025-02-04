@@ -170,8 +170,15 @@ const Home = () => {
                   isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                 }`} />
 
-              <ProfileImage imgSrc="/mg3.jpg" />
-
+                  <img
+                  src="/mg3.jpg"
+                  alt="Profile"
+                  width={600}
+                  height={500}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  
+                />
                 <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
                   isHovering ? "opacity-50" : "opacity-20"
                 }`}>

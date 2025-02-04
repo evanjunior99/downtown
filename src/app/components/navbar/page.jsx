@@ -1,8 +1,9 @@
 'use client'
+
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../themeProvider";
-import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerTitle } from "..//ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerTitle } from "../ui/drawer";
 
 const navItems = [
   { href: "#Home", label: "Home" },
@@ -20,12 +21,14 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
+      // Get all sections and their positions
       const sections = navItems
         .map((item) => {
-          const section = document.querySelector(item.href);
+          const sectionId = item.href.replace("#", "");
+          const section = document.getElementById(sectionId); // Changed to getElementById
           if (section) {
             return {
-              id: item.href.replace("#", ""),
+              id: sectionId,
               offset: section.offsetTop - 550,
               height: section.offsetHeight,
             };
@@ -53,7 +56,8 @@ const Navbar = () => {
 
   const scrollToSection = (e, href) => {
     e.preventDefault();
-    const section = document.querySelector(href);
+    const sectionId = href.replace("#", "");
+    const section = document.getElementById(sectionId); // Changed to getElementById
     if (section) {
       const top = section.offsetTop - 100;
       window.scrollTo({ top, behavior: "smooth" });
