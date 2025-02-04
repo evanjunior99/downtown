@@ -173,12 +173,12 @@ const Home = () => {
                   isHovering ? "scale-[1.02]" : "scale-100"
                 }`}>
                   <div className="w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
-                    <Image
+                    <img
                       src="/mg3.jpg"
                       alt="Profile"
                       width={600}
                       height={500}
-                      priority
+                      loading="lazy"
                       className={`object-cover object-center transition-all duration-500 ${
                         isHovering ? "scale-110" : "scale-100"
                       }`}
