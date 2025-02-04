@@ -2,6 +2,7 @@
 
 import { useState, useEffect, memo } from "react";
 import { Github, Linkedin, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -61,12 +62,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["hi i'am Matius Willams a social worker"];
+const WORDS = ["hi am Matius Willams a social worker"];
 
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id" }
+  { icon: Linkedin, link: "https://www.linkedin.com/in/Matias Williams/" },
+  { icon: FaWhatsapp, link: "https://wa.me/+265885783996" },
+  { icon: Instagram, link: "https://www.instagram.com/MatiusWilliams/" }
 ];
 
 const Home = () => {
@@ -140,10 +141,10 @@ const Home = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-white md:text-lg text-muted-foreground max-w-xl leading-relaxed font-light mx-auto lg:mx-0"
-                  data-aos="fade-up"
-                  data-aos-delay="1000">
-                  Creating innovative, functional, and user-friendly applications for digital solutions.
+                <p className="text-sm xs:text-base sm:text-lg text-gray-950 dark:text-gray-100 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 px-4 sm:px-0" 
+                   data-aos="fade-up" 
+                   data-aos-delay="1000">
+                  Transforming ideas into meaningful support and positive change through social work.
                 </p>
 
                 {/* Social Links */}
