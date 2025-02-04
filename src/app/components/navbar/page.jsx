@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../themeProvider";
+import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerTitle } from "..//ui/drawer";
 
 const navItems = [
   { href: "#Home", label: "Home" },
   { href: "#About", label: "About" },
-  //{ href: "#Portfolio", label: "Portfolio" },
   { href: "#Contact", label: "Contact" },
 ];
 
@@ -51,10 +51,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-  }, [isOpen]);
-
   const scrollToSection = (e, href) => {
     e.preventDefault();
     const section = document.querySelector(href);
@@ -68,8 +64,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-        isOpen
-          ? "bg-[#030014]/95 dark:bg-[#030014]/95"
+        scrolled
+          ? "bg-white/95 dark:bg-[#030014]/95"
           : "bg-white/50 dark:bg-[#030014]/50 backdrop-blur-xl"
       }`}
     >
@@ -137,53 +133,43 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-1.5 text-gray-700 dark:text-[#e2d3fd] hover:text-black dark:hover:text-white transition-transform duration-300 ease-in-out transform ${
-                isOpen ? "rotate-90" : "rotate-0"
-              }`}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu Overlay */}
-        <div
-          className={`md:hidden fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
-            isOpen
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-[-100%] pointer-events-none"
-          }`}
-          style={{ top: "64px" }}
-        >
-          <div className="flex flex-col h-[calc(100vh-64px)]">
-            <div className="px-4 py-4 space-y-4">
-              {navItems.map((item, index) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
-                    activeSection === item.href.substring(1)
-                      ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                      : "text-[#e2d3fd] hover:text-white"
-                  }`}
-                  style={{
-                    transitionDelay: `${index * 100}ms`,
-                    transform: isOpen ? "translateX(0)" : "translateX(50px)",
-                    opacity: isOpen ? 1 : 0,
-                  }}
+            <Drawer open={isOpen} onOpenChange={setIsOpen}>
+              <DrawerTrigger asChild>
+                <button
+                  className="p-1.5 text-gray-700 dark:text-[#e2d3fd] hover:text-black dark:hover:text-white transition-transform duration-300 ease-in-out transform"
+                  aria-label="Toggle menu"
                 >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+                  <Menu className="w-5 h-5" />
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="h-[96%] p-6 bg-white dark:bg-[#030014]">
+                <div className="relative">
+                  <DrawerTitle className="sr-only">Navigation Menu</DrawerTitle>
+                  <DrawerClose className="absolute right-0 top-0 p-2 text-gray-700 dark:text-[#e2d3fd] hover:text-black dark:hover:text-white">
+                    <X className="w-6 h-6" />
+                  </DrawerClose>
+                  <div className="flex flex-col space-y-6 mt-8">
+                    {navItems.map((item, index) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        onClick={(e) => scrollToSection(e, item.href)}
+                        className={`text-2xl font-medium transition-all duration-300 ${
+                          activeSection === item.href.substring(1)
+                            ? "bg-gradient-to-r from-[#0aad69] to-[#55f7d4] bg-clip-text text-transparent font-semibold"
+                            : "text-gray-700 dark:text-[#e2d3fd] hover:text-black dark:hover:text-white"
+                        }`}
+                        style={{
+                          animationDelay: `${index * 100}ms`,
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
         </div>
       </div>

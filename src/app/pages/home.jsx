@@ -6,6 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
+import ProfileImage from "../components/profileImage/page";
 
 const MainTitle = memo(() => (
     <div className="space-y-2 p-7" data-aos="fade-up" data-aos-delay="600">
@@ -169,22 +170,7 @@ const Home = () => {
                   isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                 }`} />
 
-                <div className={`relative w-full h-full transform transition-all duration-500 ${
-                  isHovering ? "scale-[1.02]" : "scale-100"
-                }`}>
-                  <div className="w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
-                    <img
-                      src="/mg3.jpg"
-                      alt="Profile"
-                      width={600}
-                      height={500}
-                      loading="lazy"
-                      className={`object-cover object-center transition-all duration-500 ${
-                        isHovering ? "scale-110" : "scale-100"
-                      }`}
-                    />
-                  </div>
-                </div>
+              <ProfileImage imgSrc="/mg3.jpg" />
 
                 <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
                   isHovering ? "opacity-50" : "opacity-20"
