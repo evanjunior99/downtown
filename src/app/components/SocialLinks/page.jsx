@@ -24,7 +24,7 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@ekizr_",
+    subText: "@Matius Williams",
     icon: Instagram,
     url: "https://www.instagram.com/ekizr_/?hl=id",
     color: "#E4405F",
@@ -42,7 +42,7 @@ const socialLinks = [
   {
     name: "WhatsApp",
     displayName: "WhatsApp",
-    subText: "@matius",
+    subText: "@matius williams",
     icon: FaWhatsapp, // ✅ Corrected naming
     url: "https://wa.me/+265885783996", // Replace with actual WhatsApp link
     color: "#25D366",
